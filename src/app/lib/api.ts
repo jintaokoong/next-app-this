@@ -3,7 +3,7 @@
 import db from "./db";
 
 export const createItem = async (title: string) => {
-  return new Promise((resolve, reject) => {
+  return new Promise<number>((resolve, reject) => {
     db.serialize(() => {
       db.run(
         `
